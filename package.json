@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": ". scl_source enable llvm-toolset-6.0 || true"
   },
   "author": "Prasad Wakle",
   "license": "ISC",
