@@ -1,0 +1,45 @@
+<%- include("partials/header"); -%>
+<% if(message.length > 0){ %>
+  <div class="alert alert-success alert-message"><%= message %><a class="btn btn-outline-success alert-okay" href="/updateUser" role="button">Okay</a></div>
+<% } %>
+<%- include("navbar") -%> 
+  
+    <div class="registration-form login-form">
+      <h4>Update Profile</h4>
+      <form  action="/updateUser" method="post">
+        <div class="row g-3">
+          <div class="col-sm-6">
+            <label for="firstName" class="form-label">First name</label>
+            <input type="text" class="form-control" id="firstName" name="firstName" placeholder="" value=<%=firstName%> required="">
+          </div>
+    
+          <div class="col-sm-6">
+            <label for="lastName" class="form-label">Last name</label>
+            <input type="text" class="form-control" id="lastName" name="lastName" placeholder="" value=<%=lastName%> required="">
+          </div>
+    
+          <div class="col-12">
+            <label for="username" class="form-label">Username</label>
+            <div class="input-group has-validation">
+              <input type="text" class="form-control" id="username" name="username" placeholder="Username" value=<%=username%> required="">
+            </div>
+          </div>
+    
+          <div class="col-12">
+            <label for="email" class="form-label">Email</label>
+            <input type="email" class="form-control" id="email" name="email" placeholder="you@gmail.com" value=<%=email%> required="">
+          </div>
+          
+          <button class="w-25 btn btn-primary btn-md" type="submit">Update</button>
+          
+      </form>
+      <form class="delete-user mb-3" action="/delete" method="post">
+        <button class="w-25 btn btn-danger btn-md" type="submit">Delete Account</button>
+      </form>
+    
+    </div>
+    
+    
+
+
+<%- include("partials/footer"); -%>
