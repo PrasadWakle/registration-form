@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\""
+    "test": "tap test/*.js"
   },
   "author": "Prasad Wakle",
   "license": "ISC",
