@@ -32,7 +32,7 @@ cookie:{
     secure: true,
     maxAge:60000
        },
-store: MongoStore.create({ mongoUrl: process.env.DATABASE_URL }),
+store: MongoStore.create({ mongoUrl: process.env.DATABASE_URL,collection:"users" }),
 secret: process.env.secret,
 saveUninitialized: true,
 resave: false
