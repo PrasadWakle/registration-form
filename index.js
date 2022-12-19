@@ -4,6 +4,7 @@ const bodyParser = require("body-parser");
 const ejs = require("ejs");
 const mongoose = require("mongoose");
 const session = require("cookie-session");
+const MongoStore = require('connect-mongo')(session);
 const flash = require("connect-flash");
 const passport = require("passport");
 const passportLocalMongoose = require("passport-local-mongoose");
@@ -31,7 +32,7 @@ cookie:{
     secure: true,
     maxAge:60000
        },
-store: new MongoStore(),
+store: new MongoStore(options),
 secret: process.env.secret,
 saveUninitialized: true,
 resave: false
