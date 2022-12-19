@@ -32,7 +32,7 @@ cookie:{
     secure: true,
     maxAge:60000
        },
-store: MongoStore.create({ mongoUrl: process.env.DATABASE_URL }),
+store: MongoStore.create({ mongoUrl: process.env.DATABASE_URL }),...options,
 secret: process.env.secret,
 saveUninitialized: true,
 resave: false
@@ -54,6 +54,7 @@ app.use(passport.session());
 require("./src/db/connect") //connect to mongoDB database
 
 const User = require("./src/models/register");// schema
+const { options } = require('nodemon/lib/config');
 
 
 passport.use(User.createStrategy());
