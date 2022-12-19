@@ -26,7 +26,7 @@ app.use(express.static("public"));
 
 app.use(
   session({
-    secret: process.env.SESSION_SECRET,
+    secret: process.env["SESSION_SECRET"],
     resave: false,
     saveUninitialized: false,
   })
@@ -246,5 +246,5 @@ app.post("/updateUser", function (req, res) {
 
 
 app.listen(port, function () {
-  console.log("Server has started at port 3000");
+  console.log("Server has started at port "+port);
 });
