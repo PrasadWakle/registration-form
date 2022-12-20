@@ -35,9 +35,9 @@ app.use(session({
 //     maxAge:60000
 //        },
 // store: MongoStore.create({ mongoUrl: process.env.DATABASE_URL }),
-secret: secret,
-saveUninitialized: true,
-resave: false
+  secret: secret,
+  saveUninitialized: true,
+  resave: false
 }));
 
 // app.use(function(req,res,next){
