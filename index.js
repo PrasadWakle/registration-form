@@ -27,13 +27,15 @@ app.use(express.static("public"));
 
 // app.set('trust proxy', 1);
 
+const secret = process.env.secret;
+
 app.use(session({
 // cookie:{
 //     secure: true,
 //     maxAge:60000
 //        },
 // store: MongoStore.create({ mongoUrl: process.env.DATABASE_URL }),
-secret: process.env.secret,
+secret: secret,
 saveUninitialized: true,
 resave: false
 }));
