@@ -56,7 +56,7 @@ app.use(passport.session());
 require("./src/db/connect") //connect to mongoDB database
 
 const User = require("./src/models/register");// schema
-// const { options } = require('nodemon/lib/config');
+const { options } = require('nodemon/lib/config');
 
 
 passport.use(User.createStrategy());
