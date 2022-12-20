@@ -25,25 +25,25 @@ app.use(
 
 app.use(express.static("public"));
 
-app.set('trust proxy', 1);
+// app.set('trust proxy', 1);
 
 app.use(session({
 // cookie:{
 //     secure: true,
 //     maxAge:60000
 //        },
-store: MongoStore.create({ mongoUrl: process.env.DATABASE_URL }),
+// store: MongoStore.create({ mongoUrl: process.env.DATABASE_URL }),
 secret: process.env.secret,
 saveUninitialized: true,
 resave: false
 }));
 
-app.use(function(req,res,next){
-if(!req.session){
-    return next(new Error('Oh no')) //handle error
-}
-next() //otherwise continue
-});
+// app.use(function(req,res,next){
+// if(!req.session){
+//     return next(new Error('Oh no')) //handle error
+// }
+// next() //otherwise continue
+// });
 
 
 app.use(flash());
