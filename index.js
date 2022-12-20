@@ -8,6 +8,7 @@ const MongoStore = require('connect-mongo');
 const flash = require("connect-flash");
 const passport = require("passport");
 const passportLocalMongoose = require("passport-local-mongoose");
+const path = require("path");
 
 
 const port = process.env.PORT || 3000;
