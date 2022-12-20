@@ -148,6 +148,7 @@ app.post("/login", function (req, res,next) {
 
     req.login(user, function(err){
       if (err){
+        console.log(err);
         return next(err)
       }
       else{
