@@ -3,7 +3,7 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const ejs = require("ejs");
 const mongoose = require("mongoose");
-const session = require("cookie-session");
+const session = require("express-session");
 const MongoStore = require('connect-mongo');
 const flash = require("connect-flash");
 const passport = require("passport");
@@ -28,11 +28,11 @@ app.use(express.static("public"));
 app.set('trust proxy', 1);
 
 app.use(session({
-cookie:{
-    secure: true,
-    maxAge:60000
-       },
-store: MongoStore.create({ mongoUrl: process.env.DATABASE_URL,collection:"users" }),
+// cookie:{
+//     secure: true,
+//     maxAge:60000
+//        },
+store: MongoStore.create({ mongoUrl: process.env.DATABASE_URL }),
 secret: process.env.secret,
 saveUninitialized: true,
 resave: false
