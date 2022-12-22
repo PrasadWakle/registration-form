@@ -5,12 +5,16 @@
 }
  
 body{
-   background-color: #ffffff;
    font-family: "Montserrat", sans-serif;
    font-weight: 500; 
+   background-image: linear-gradient(to top right,#614385,#EA8D8D);
+   color: #404258;
+   height: 100%;
+   background-repeat: no-repeat;
+   background-attachment: fixed;
  }
 
-
+/* Headings */
 h4{
   font-size: 2.5rem;
   padding-bottom: 30px;
@@ -28,31 +32,35 @@ button{
   color: #2146C7;
 }
 
+/* navbar */
 nav{
   background-color: rgba(0, 0, 0, 0.2);
 }
 
+.navbar{
+  padding: 0.5rem 0.4rem;
+}
 
-.background-img{
-  width: 100vw;
-  height: 100vh;
-  z-index: -1;
-  position: absolute;
-  top: 0;
-  filter: brightness(85%);
+.nav-link{
+  font-size: 1.2rem;
+}
+
+.nav-link:hover{
+  color: #000000;
 }
 
 .registration-form.login-form{
   width:45%;
   margin:50px auto;
   padding: 15px;
-  background-color: rgba(0, 0, 0, 0.2);
+  background-color: #F1F6F5;
   position: relative;
+  border-radius: 5px;
 }
 
 .form-label{
   font-family: "Montserrat", sans-serif;
-  font-size: 1rem;
+  font-size: 1.2rem;
   font-weight: 500; 
 }
 
@@ -77,12 +85,29 @@ nav{
 .alert-message{
   position: relative;
   border-radius: 0;
+  background-color: #F1F6F5;
+  margin-bottom: 0;
+  padding-right:2.5rem ;
 }
 
+/* message button */
 .alert-okay{
   position: absolute;
   right: 20px;
   bottom:10px;
+  border: none;
+}
+
+.alert-okay.error{
+  bottom: 20px;
+}
+
+.alert-success{
+  border-bottom: 7px solid #54B435;
+}
+
+.alert-danger{
+  border-bottom: 7px solid #DC0000;
 }
 
 /* profile page */
@@ -90,7 +115,101 @@ nav{
   font-size: 1.3rem;
 }
 
-.nav-link{
-  font-size: 1.2rem;
-  color: black;
+.update-btn{
+  width: 25%;
+}
+
+/********************************************** Media Queris ********************************************/
+
+/******************* Tablets **************************/
+@media (min-width:601px) and (max-width:1000px){
+  
+  .w-25 {
+    width: 40%!important;
+  }
+
+  .delete-user .w-25{
+    width: 50%!important;
+  }
+}
+
+/******************* Mobiles **************************/
+@media (max-width:600px){
+
+  html, body {
+    overflow-x: hidden;
+  }
+  
+  .registration-form.login-form{
+    width:85%;
+    height: fit-content;
+  }
+
+  .w-25 {
+    width: 45%!important;
+    padding: 0.8rem;
+    font-weight: 500;
+  }
+
+  .update-btn{
+    width: 60%;
+    padding: 0.8rem;
+    font-weight: 500;
+  }
+
+  .user{
+    width: 80%;
+  }
+
+  .profile{
+    font-size: 1rem;
+  }
+
+  .delete-user{
+    left: 125px;
+  }
+
+  .btn-danger{
+    padding: 0.8rem;
+    font-weight: 500;
+  }
+
+  .alert-okay{
+    right: 2px;
+    bottom:10px;
+  }
+
+}
+
+/****************** In mobile landscape mode *******************/
+@media (max-width:800px) and (orientation:landscape){
+  html, body {
+    overflow-x: hidden;
+  }
+
+  .registration-form.login-form{
+    width:85%;
+    height: fit-content;
+  }
+
+  .delete-user{
+    left: 140px;
+  }
+
+  .update-btn{
+    width: 30%!important;
+  }
+
+  .w-25 {
+    width: 45%!important;
+  }
+
+  /* update button on update user page */
+  .update-btn{
+    width: 25% !important;
+  }
+
+  .alert-okay.error{
+    bottom: 10px;
+  }
 }

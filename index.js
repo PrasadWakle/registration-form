@@ -127,7 +127,7 @@ app.post("/", function (req, res,next) {
 //****************************************Login User**************************************************
 
 app.get("/login", function (req, res) {
-  res.render("login",{message:req.flash("message")});
+  res.render("login",{message:req.flash("message"),messageSuccess:req.flash("messageSuccess")});
 });
 
 app.post("/login", function (req, res,next) {
@@ -184,7 +184,7 @@ app.post("/delete", function (req, res) {
         req.flash("message","Something went wrong")
         res.redirect("/updateUser");
       } else {
-        req.flash("message","Account deleted successfully");
+        req.flash("messageSuccess","Account deleted successfully");
         res.redirect("/login");
       }
     });

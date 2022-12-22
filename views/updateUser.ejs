@@ -1,6 +1,6 @@
 <%- include("partials/header"); -%>
 <% if(message.length > 0){ %>
-  <div class="alert alert-success alert-message"><%= message %><a class="btn btn-outline-success alert-okay" href="/updateUser" role="button">Okay</a></div>
+  <div class="alert alert-success alert-message"><%= message %><a class="btn btn-outline-success alert-okay" href="/updateUser" role="button"><i class="fa fa-times"></i></a></div>
 <% } %>
 <%- include("navbar") -%> 
   
@@ -30,16 +30,14 @@
             <input type="email" class="form-control" id="email" name="email" placeholder="you@gmail.com" value=<%=email%> required="" autocomplete="off">
           </div>
           
-          <button class="w-25 btn btn-primary btn-md" type="submit">Update</button>
+          <button class="w-25 btn btn-primary btn-md update-btn" type="submit">Update</button>
           
       </form>
       <form class="delete-user mb-3" action="/delete" method="post">
-        <button class="w-25 btn btn-danger btn-md" type="submit">Delete Account</button>
+        <button class="btn btn-danger btn-md" type="submit">Delete Account</button>
       </form>
     
     </div>
     
     
-
-
 <%- include("partials/footer"); -%>

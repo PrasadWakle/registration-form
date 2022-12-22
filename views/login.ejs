@@ -1,9 +1,14 @@
 <%- include("partials/header");-%> 
 
-<% if(message.length > 0){ %>
-<div class="alert alert-danger alert-message"><%= message %><a class="btn btn-outline-danger alert-okay" href="/login" role="button">Okay</a></div>
-
+<% if(message.length > 0 ){ %>
+    <div class="alert alert-danger alert-message"><%= message %><a class="btn btn-outline-danger alert-okay" href="/login" role="button"><i class="fa fa-times"></i></a></div>
 <% } %>
+
+<% if(messageSuccess.length > 0){ %>
+  <div class="alert alert-success alert-message"><%= messageSuccess %><a class="btn btn-outline-success alert-okay" href="/login" role="button"><i class="fa fa-times"></i></a></div>
+<% } %> 
+
+
 <div class="registration-form login-form">
   <h4>Login</h4>
   <form class="needs-validation" novalidate="" action="/login" method="post">
@@ -32,6 +37,7 @@
         name="password"
         placeholder="Password"
         required=""
+        autocomplete="off"
       />
       <div class="invalid-feedback">Please enter your password.</div>
     </div>
@@ -39,7 +45,7 @@
     <button class="w-25 btn btn-primary btn-md" type="submit">Log In</button>
   </form>
 
-  <p>Don't have an account? <a href="/">Sign Up</a></p>
+  <p>or <a href="/">Sign Up</a></p>
 </div>
 
 <%- include("partials/footer");-%>
