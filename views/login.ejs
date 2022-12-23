@@ -1,0 +1,51 @@
+<%- include("partials/header");-%> 
+
+<% if(message.length > 0 ){ %>
+    <div class="alert alert-danger alert-message"><%= message %><a class="btn btn-outline-danger alert-okay" href="/login" role="button"><i class="fa fa-times"></i></a></div>
+<% } %>
+
+<% if(messageSuccess.length > 0){ %>
+  <div class="alert alert-success alert-message"><%= messageSuccess %><a class="btn btn-outline-success alert-okay" href="/login" role="button"><i class="fa fa-times"></i></a></div>
+<% } %> 
+
+
+<div class="registration-form login-form">
+  <h4>Login</h4>
+  <form class="needs-validation" novalidate="" action="/login" method="post">
+    <div class="mb-3">
+      <label for="username" class="form-label">Username</label>
+      <div class="input-group has-validation">
+        <input
+          type="text"
+          class="form-control"
+          id="username"
+          name="username"
+          placeholder="Username"
+          required=""
+          autocomplete="off"
+        />
+        <div class="invalid-feedback">Your username is required.</div>
+      </div>
+    </div>
+
+    <div class="mb-3">
+      <label for="password" class="form-label">Password</label>
+      <input
+        type="password"
+        class="form-control"
+        id="password"
+        name="password"
+        placeholder="Password"
+        required=""
+        autocomplete="off"
+      />
+      <div class="invalid-feedback">Please enter your password.</div>
+    </div>
+
+    <button class="w-25 btn btn-primary btn-md" type="submit">Log In</button>
+  </form>
+
+  <p>or <a href="/">Sign Up</a></p>
+</div>
+
+<%- include("partials/footer");-%>
