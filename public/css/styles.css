@@ -182,7 +182,7 @@ nav{
 }
 
 /****************** In mobile landscape mode *******************/
-@media (max-width:800px) and (orientation:landscape){
+@media (max-width:800px) and (max-height:330px) and (orientation:landscape){
   html, body {
     overflow-x: hidden;
   }
@@ -193,10 +193,10 @@ nav{
   }
 
   .delete-user{
-    left: 140px;
-  }
+    left: 170px;
+  } 
 
-  .update-btn{
+  .update-button.w-25{
     width: 30%!important;
   }
 
@@ -204,7 +204,7 @@ nav{
     width: 45%!important;
   }
 
-  /* update button on update user page */
+  /* update button on update profile page */
   .update-btn{
     width: 25% !important;
   }
